@@ -72,7 +72,7 @@ module fpm_meta_hdf5
             return
         end if
 
-        call add_pkg_config_compile_options(this, 'netcdf', include_flag, libdir, error)
+        call add_pkg_config_compile_options(this, name, include_flag, libdir, error)
         if (allocated(error)) return
 
         ! Some pkg-config hdf5.pc (e.g. Ubuntu) don't include the commonly-used HL HDF5 libraries,
