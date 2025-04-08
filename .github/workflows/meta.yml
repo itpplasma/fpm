@@ -126,7 +126,7 @@ jobs:
       if: contains(matrix.os,'ubuntu') && contains(matrix.mpi,'intel')
       run: |
         # Install MPI
-        sudo apt-get install -y -q intel-oneapi-mpi-devel ninja-build cmake libcurl4-gnutls-dev
+        sudo apt-get install -y -q intel-oneapi-mpi-devel intel-oneapi-mkl-devel ninja-build cmake libcurl4-gnutls-dev
         source /opt/intel/oneapi/setvars.sh --force
         printenv >> $GITHUB_ENV
         # To run HDF5 with oneAPI, we need to build it from source. Use CMake to generate pkg-config info
